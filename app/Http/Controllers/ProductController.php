@@ -52,21 +52,12 @@ class ProductController extends Controller
 
         $this->validate($request , [
             'nama'          => 'required|string',
-            'harga'         => 'required',
+            'kode'          => 'required',
             'qty'           => 'required',
-            'image'         => 'required',
             'category_id'   => 'required',
         ]);
 
-        $input = $request->all();
-        $input['image'] = null;
-
-        if ($request->hasFile('image')){
-            $input['image'] = '/upload/products/'.str_slug($input['nama'], '-').'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('/upload/products/'), $input['image']);
-        }
-
-        Product::create($input);
+        Product::create($request->all());
 
         return response()->json([
             'success' => true,
@@ -81,10 +72,6 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -116,7 +103,7 @@ class ProductController extends Controller
 
         $this->validate($request , [
             'nama'          => 'required|string',
-            'harga'         => 'required',
+            'kode'          => 'required|string',
             'qty'           => 'required',
 //            'image'         => 'required',
             'category_id'   => 'required',
@@ -179,7 +166,7 @@ class ProductController extends Controller
                 return '<img class="rounded-square" width="50" height="50" src="'. url($product->image) .'" alt="">';
             })
             ->addColumn('action', function($product){
-                return '<a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open"></i> Show</a> ' .
+                return 
                     '<a onclick="editForm('. $product->id .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .
                     '<a onclick="deleteData('. $product->id .')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
             })

@@ -23,9 +23,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
-                    <th>Harga</th>
+                    <th>Kode</th>
                     <th>QTY</th>
-                    <th>Image</th>
                     <th>Category</th>
                     <th></th>
                 </tr>
@@ -71,9 +70,8 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'nama', name: 'nama'},
-                {data: 'harga', name: 'harga'},
+                {data: 'kode', name: 'kode'},
                 {data: 'qty', name: 'qty'},
-                {data: 'show_photo', name: 'show_photo'},
                 {data: 'category_name', name: 'category_name'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
@@ -101,7 +99,7 @@
 
                     $('#id').val(data.id);
                     $('#nama').val(data.nama);
-                    $('#harga').val(data.harga);
+                    $('#kode').val(data.kode);
                     $('#qty').val(data.qty);
                     $('#category_id').val(data.category_id);
                 },

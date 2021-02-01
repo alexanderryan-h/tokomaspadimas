@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sale;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sales_month = Sale::whereMonth('created_at', date('m'))->count();
+
+        return view('home')->with('sales_month', $sales_month);
     }
 }

@@ -28,7 +28,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Address</th>
-                    <th>Email</th>
+                    <th>E-mail</th>
                     <th>Phone</th>
                     <th></th>
                 </tr>

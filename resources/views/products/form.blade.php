@@ -23,21 +23,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label >Price</label>
-                            <input type="text" class="form-control" id="harga" name="harga"   required>
+                            <label >Kode</label>
+                            <input type="text" class="form-control" id="kode" name="kode"   required>
                             <span class="help-block with-errors"></span>
                         </div>
 
                         <div class="form-group">
                             <label >Quantity</label>
                             <input type="text" class="form-control" id="qty" name="qty"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label >Image</label>
-                            <input type="file" class="form-control" id="image" name="image" >
                             <span class="help-block with-errors"></span>
                         </div>
 

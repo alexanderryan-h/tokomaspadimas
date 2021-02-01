@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('sales', 'SaleController');
 	Route::get('/apiSales', 'SaleController@apiSales')->name('api.sales');
+	Route::get('/show', 'SaleController@show')->name('show');
 	Route::post('/importSales', 'SaleController@ImportExcel')->name('import.sales');
 	Route::get('/exportSalesAll', 'SaleController@exportSalesAll')->name('exportPDF.salesAll');
 	Route::get('/exportSalesAllExcel', 'SaleController@exportExcel')->name('exportExcel.salesAll');

@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('category_id')->unsigned();
 
             $table->string('nama');
-            $table->integer('harga');
+            $table->string('kode');
             $table->string('image')->default(null);
             $table->integer('qty');
             $table->timestamps();

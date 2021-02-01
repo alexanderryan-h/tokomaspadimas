@@ -39,6 +39,11 @@
                             <input type="text" class="form-control" id="telepon" name="telepon"   required>
                             <span class="help-block with-errors"></span>
                         </div>
+                        <div class="form-group">
+                            <label >Code</label>
+                            <input type="text" class="form-control" id="code" name="code"  required>
+                            <span class="help-block with-errors"></span>
+                        </div>
 
 
                     </div>

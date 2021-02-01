@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 
 use App\Exports\ExportSales;
 use App\Imports\SalesImport;
+use App\Product;
 use App\Sale;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Excel;
 use PDF;
+use Illuminate\Support\Facades\DB;  
 
 
 class SaleController extends Controller
@@ -34,6 +36,11 @@ class SaleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function show($id)
+    {
+        $sales = Sale::find($id);
+        return view('sales/show')->with('sales',$sales);
+    }
     public function create()
     {
         //
@@ -55,6 +62,9 @@ class SaleController extends Controller
         ]);
 
         Sale::create($request->all());
+        DB::table('products')->where('kode',$request->code)->delete();
+
+
 
         return response()->json([
             'success'    => true,
@@ -69,10 +79,6 @@ class SaleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

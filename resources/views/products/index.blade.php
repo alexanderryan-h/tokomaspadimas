@@ -24,7 +24,6 @@
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Kode</th>
-                    <th>QTY</th>
                     <th>Category</th>
                     <th></th>
                 </tr>
@@ -71,7 +70,6 @@
                 {data: 'id', name: 'id'},
                 {data: 'nama', name: 'nama'},
                 {data: 'kode', name: 'kode'},
-                {data: 'qty', name: 'qty'},
                 {data: 'category_name', name: 'category_name'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
@@ -100,7 +98,6 @@
                     $('#id').val(data.id);
                     $('#nama').val(data.nama);
                     $('#kode').val(data.kode);
-                    $('#qty').val(data.qty);
                     $('#category_id').val(data.category_id);
                 },
                 error : function() {

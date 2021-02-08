@@ -56,13 +56,11 @@ class SaleController extends Controller
     {
         $this->validate($request, [
             'nama'      => 'required',
-            'alamat'    => 'required',
-            'email'     => 'required|unique:customers',
-            'telepon'   => 'required',
+            'berat'    => 'required',
         ]);
 
         Sale::create($request->all());
-        DB::table('products')->where('kode',$request->code)->delete();
+        DB::table('products')->where('kode',$request->code)->limit(1)->delete();
 
 
 
@@ -103,9 +101,7 @@ class SaleController extends Controller
     {
         $this->validate($request, [
             'nama'      => 'required|string|min:2',
-            'alamat'    => 'required|string|min:2',
-            'email'     => 'required|string|email|max:255|unique:sales',
-            'telepon'   => 'required|string|min:2',
+            'berat'   => 'required|string|min:2',
         ]);
 
         $sale = Sale::findOrFail($id);
@@ -140,7 +136,7 @@ class SaleController extends Controller
 
         return Datatables::of($sales)
             ->addColumn('action', function($sales){
-                return '<a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open"></i> Show</a> ' .
+                return 
                     '<a onclick="editForm('. $sales->id .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .
                     '<a onclick="deleteData('. $sales->id .')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
             })

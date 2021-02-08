@@ -10,11 +10,11 @@
     <div class="box">
 
         <div class="box-header">
-            <h3 class="box-title">Data Sales</h3>
+            <h3 class="box-title">Data Penjualan</h3>
         </div>
 
         <div class="box-header">
-            <a onclick="addForm()" class="btn btn-primary" >Add Customers</a>
+            <a onclick="addForm()" class="btn btn-primary" >Tambah Penjualan</a>
             <a href="{{ route('exportPDF.salesAll') }}" class="btn btn-danger">Export PDF</a>
             <a href="{{ route('exportExcel.salesAll') }}" class="btn btn-success">Export Excel</a>
         </div>
@@ -27,9 +27,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>E-mail</th>
-                    <th>Phone</th>
+                    <th>Kode</th>
+                    <th>Berat</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -76,9 +75,8 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'nama', name: 'nama'},
-                {data: 'alamat', name: 'alamat'},
-                {data: 'email', name: 'email'},
-                {data: 'telepon', name: 'telepon'},
+                {data: 'code', name: 'code'},
+                {data: 'berat', name: 'berat'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });
@@ -105,9 +103,8 @@
 
                     $('#id').val(data.id);
                     $('#nama').val(data.nama);
-                    $('#alamat').val(data.alamat);
-                    $('#email').val(data.email);
-                    $('#telepon').val(data.telepon);
+                    $('#code').val(data.code);
+                    $('#berat').val(data.berat);
                 },
                 error : function() {
                     alert("Nothing Data");

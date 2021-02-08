@@ -29,12 +29,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label >Quantity</label>
-                            <input type="text" class="form-control" id="qty" name="qty"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-                        <div class="form-group">
                             <label >Category</label>
                             {!! Form::select('category_id', $category, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
                             <span class="help-block with-errors"></span>

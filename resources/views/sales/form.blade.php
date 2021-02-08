@@ -23,25 +23,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label >Address</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label >Email</label>
-                            <input type="email" class="form-control" id="email" name="email"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label >Phone</label>
-                            <input type="text" class="form-control" id="telepon" name="telepon"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                        <div class="form-group">
                             <label >Code</label>
                             <input type="text" class="form-control" id="code" name="code"  required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Berat</label>
+                            <input type="number" class="form-control" id="berat" name="berat"  required>
                             <span class="help-block with-errors"></span>
                         </div>
 

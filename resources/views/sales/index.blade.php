@@ -26,10 +26,12 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nama</th>
+                    <th>Kategori</th>
                     <th>Kode</th>
                     <th>Berat</th>
-                    <th></th>
+                    <th>Tanggal</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody></tbody>
@@ -37,8 +39,6 @@
         </div>
         <!-- /.box-body -->
     </div>
-
-    @include('sales.form_import')
 
     @include('sales.form')
 
@@ -75,8 +75,10 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'nama', name: 'nama'},
+                {data: 'category_name', name: 'category_name'},
                 {data: 'code', name: 'code'},
                 {data: 'berat', name: 'berat'},
+                {data: 'tanggal_sale', name: 'tanggal_sale'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });
@@ -103,8 +105,10 @@
 
                     $('#id').val(data.id);
                     $('#nama').val(data.nama);
+                    $('#category_id').val(data.category_id);
                     $('#code').val(data.code);
                     $('#berat').val(data.berat);
+                    $('#tanggal_sale').val(data.tanggal_sale);
                 },
                 error : function() {
                     alert("Nothing Data");
@@ -175,8 +179,8 @@
                         },
                         error : function(data){
                             swal({
-                                title: 'Oops...',
-                                text: data.message,
+                                title: 'Gagal...',
+                                text: 'Barang tidak ada',
                                 type: 'error',
                                 timer: '1500'
                             })

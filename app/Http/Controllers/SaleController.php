@@ -7,6 +7,7 @@ use App\Exports\ExportSales;
 use App\Imports\SalesImport;
 use App\Product;
 use App\Sale;
+use App\Category;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Excel;
@@ -27,8 +28,12 @@ class SaleController extends Controller
      */
     public function index()
     {
+        $category = Category::orderBy('name','ASC')
+            ->get()
+            ->pluck('name','id');
+
         $sales = Sale::all();
-        return view('sales.index');
+        return view('sales.index', compact('category'));
     }
 
     /**
@@ -54,20 +59,25 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
+
+        if(DB::table('products')->where('kode',$request->code)->where('berat_product',$request->berat)->where('category_id',$request->category_id)->limit(1)->delete()){;
         $this->validate($request, [
             'nama'      => 'required',
             'berat'    => 'required',
         ]);
 
         Sale::create($request->all());
-        DB::table('products')->where('kode',$request->code)->limit(1)->delete();
-
 
 
         return response()->json([
             'success'    => true,
             'message'    => 'Sales Created'
         ]);
+        }
+        else{
+            return response()->json([
+                'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+        }
 
     }
 
@@ -135,6 +145,9 @@ class SaleController extends Controller
         $sales = Sale::all();
 
         return Datatables::of($sales)
+            ->addColumn('category_name', function ($product){
+                return $product->category->name;
+            })
             ->addColumn('action', function($sales){
                 return 
                     '<a onclick="editForm('. $sales->id .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .

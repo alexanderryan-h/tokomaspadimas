@@ -14,7 +14,7 @@
         </div>
 
         <div class="box-header">
-            <a href="/register" class="btn btn-primary" >Add User</a>
+            <a href="/register" class="btn btn-primary" >Tambah User</a>
         </div>
 
 
@@ -24,7 +24,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Email</th>
                     <th>Role</th>
                     <th></th>

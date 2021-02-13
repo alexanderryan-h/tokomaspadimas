@@ -10,9 +10,10 @@
     <div class="box">
 
         <div class="box-header">
-            <h3 class="box-title">Data Products</h3>
-
-            <a onclick="addForm()" class="btn btn-primary pull-right" style="margin-top: -8px;">Add Products</a>
+            <h3 class="box-title">Data Produk</h3>
+        </div>
+        <div class="box-header">
+            <a onclick="addForm()" class="btn btn-primary">Tambah Produk</a>
         </div>
 
 
@@ -23,9 +24,10 @@
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
+                    <th>Kategori</th>
                     <th>Kode</th>
-                    <th>Category</th>
-                    <th></th>
+                    <th>Berat</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody></tbody>
@@ -69,8 +71,9 @@
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'nama', name: 'nama'},
-                {data: 'kode', name: 'kode'},
                 {data: 'category_name', name: 'category_name'},
+                {data: 'kode', name: 'kode'},
+                {data: 'berat_product', name: 'berat_product'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });
@@ -97,8 +100,9 @@
 
                     $('#id').val(data.id);
                     $('#nama').val(data.nama);
-                    $('#kode').val(data.kode);
                     $('#category_id').val(data.category_id);
+                    $('#kode').val(data.kode);
+                    $('#berat_product').val(data.berat_product);
                 },
                 error : function() {
                     alert("Nothing Data");

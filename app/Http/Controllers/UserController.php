@@ -118,8 +118,7 @@ class UserController extends Controller {
 
 		return Datatables::of($users)
 			->addColumn('action', function ($users) {
-				return '<a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open"></i> Show</a> ' .
-				'<a onclick="editForm(' . $users->id . ')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .
+				return 
 				'<a onclick="deleteData(' . $users->id . ')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
 			})
 			->rawColumns(['action'])->make(true);

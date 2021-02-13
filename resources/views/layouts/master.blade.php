@@ -39,9 +39,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>FAS</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Informasi</b>Inventory</span>
+            <span class="logo-lg"><b>Informasi</b> Inventory</span>
         </a>
 
         <!-- Header Navbar -->
@@ -92,10 +92,6 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -122,7 +118,7 @@
         </div>
         <!-- Default to the left -->
         <?php $date = date('Y')?>
-        <strong>Copyright &copy; {{$date}} <a href="#">Revan</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; {{$date}} <a href="#">FAS</a>.</strong> All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->

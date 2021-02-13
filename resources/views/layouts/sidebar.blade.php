@@ -32,6 +32,7 @@
             <li class="header">Fungsi</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="active"><a href="{{ url('/dashboard2') }}"><i class="fa fa-cubes"></i> <span>Total Produk</span></a></li>
             <li class="active"><a href="{{ route('user.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
             <li class="active"><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> <span>Kategori</span></a></li>
             <li class="active"><a href="{{ route('products.index') }}"><i class="fa fa-cubes"></i> <span>Product</span></a></li>

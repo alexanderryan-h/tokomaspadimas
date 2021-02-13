@@ -23,14 +23,20 @@
                         </div>
 
                         <div class="form-group">
+                            <label >Category</label>
+                            {!! Form::select('category_id', $category, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
                             <label >Kode</label>
                             <input type="text" class="form-control" id="kode" name="kode"   required>
                             <span class="help-block with-errors"></span>
                         </div>
 
                         <div class="form-group">
-                            <label >Category</label>
-                            {!! Form::select('category_id', $category, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
+                            <label >Berat</label>
+                            <input type="number" class="form-control" id="berat_product" name="berat_product"   required>
                             <span class="help-block with-errors"></span>
                         </div>
 

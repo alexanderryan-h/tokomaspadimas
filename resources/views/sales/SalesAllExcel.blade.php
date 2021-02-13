@@ -44,8 +44,9 @@
     <tr>
         <td>ID</td>
         <td>Name</td>
-        <td>Address</td>
-        <td>Email</td>
+        <td>Kode</td>
+        <td>Berat</td>
+        <td>Tanggal</td>
     </tr>
     </thead>
     @foreach($sales as $s)
@@ -53,8 +54,9 @@
         <tr>
             <td>{{ $s->id }}</td>
             <td>{{ $s->nama }}</td>
-            <td>{{ $s->alamat }}</td>
-            <td>{{ $s->email }}</td>
+            <td>{{ $s->code }}</td>
+            <td>{{ $s->berat }}</td>
+            <td>{{ $s->tanggal_sale }}</td>
         </tr>
         </tbody>
     @endforeach

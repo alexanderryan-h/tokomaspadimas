@@ -23,6 +23,12 @@
                         </div>
 
                         <div class="form-group">
+                            <label >Category</label>
+                            {!! Form::select('category_id', $category, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
                             <label >Code</label>
                             <input type="text" class="form-control" id="code" name="code"  required>
                             <span class="help-block with-errors"></span>
@@ -31,6 +37,12 @@
                         <div class="form-group">
                             <label >Berat</label>
                             <input type="number" class="form-control" id="berat" name="berat"  required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Tanggal</label>
+                            <input type="date" class="form-control" id="tanggal_sale" name="tanggal_sale"  required>
                             <span class="help-block with-errors"></span>
                         </div>
 
